@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import Movie from '../interfaces/Movie';
+import Movie from '../../../interfaces/Movie';
 
 @Component({
   selector: 'app-movie',
@@ -13,7 +13,6 @@ export class MovieComponent implements OnInit {
   logMovieIdEmitter = new EventEmitter<any>();
 
   constructor() { }
-
   ngOnInit() {
   }
 

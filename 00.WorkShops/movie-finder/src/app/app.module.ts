@@ -1,31 +1,32 @@
+import { AppCommonModule } from './components/common/common.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { FooterComponent } from './footer/footer.component';
-import { MoviesComponent } from './movies/movies.component';
 
-import { MovieService } from './services/movie.service';
-import { MovieComponent } from './movie/movie.component';
+import { SingleMovieResolver } from './services/resolvers/single-movie.resolver';
+import { MoviesResolver } from './services/resolvers/movies.resolver';
+import { AppMovieModule } from './components/movie/movie.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NavbarComponent,
-    FooterComponent,
-    MoviesComponent,
-    MovieComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    FormsModule,
+    HttpClientModule,
+    AppRoutingModule,
+    AppMovieModule,
+    AppCommonModule,
   ],
   providers: [
-    MovieService
+    SingleMovieResolver,
+    MoviesResolver,
   ],
   bootstrap: [AppComponent]
 })
