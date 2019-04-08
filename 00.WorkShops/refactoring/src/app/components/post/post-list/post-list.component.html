@@ -1,0 +1,7 @@
+<section id="viewCatalog">
+  <div class="posts">
+    <article *ngFor="let post of (allPosts$ | async); let i = index;" class="post">
+      <app-post-info [post]="post" [index]="i" (deletePostEmitter)="onDeletePost($event)" ></app-post-info>
+    </article>
+  </div>
+</section>
